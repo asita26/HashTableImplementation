@@ -29,6 +29,21 @@ public class MyHashTable {
 
         bucket.add(new MyMapNode(key, 1));
     }
+    public void remove(String key) {
+        int index = getBucketIndex(key);
+        LinkedList<MyMapNode> bucket = buckets[index];
+
+        // Remove the first occurrence of the specified key
+        for (int i = 0; i < bucket.size(); i++) {
+            MyMapNode node = bucket.get(i);
+            if (node.key.equals(key)) {
+                bucket.remove(i);
+                return;
+            }
+        }
+    }
+
+
 
     public void displayFrequency() {
         System.out.println("Word Frequency:");
