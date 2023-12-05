@@ -30,21 +30,6 @@ public class MyHashTable {
         bucket.add(new MyMapNode(key, 1));
     }
 
-    public void remove(String key) {
-        int index = getBucketIndex(key);
-        LinkedList<MyMapNode> bucket = buckets[index];
-
-        // Using a traditional loop to remove nodes based on the condition
-        for (int i = 0; i < bucket.size(); i++) {
-            MyMapNode node = bucket.get(i);
-            if (node.key.equals(key)) {
-                bucket.remove(i);
-                i--; // Adjust index after removal
-            }
-        }
-    }
-
-
     public void displayFrequency() {
         System.out.println("Word Frequency:");
         for (LinkedList<MyMapNode> bucket : buckets) {

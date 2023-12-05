@@ -1,16 +1,16 @@
 public class WordFrequencyCounter {
     public static void main(String[] args) {
-        String sentence = "To be or not to be";
-        String[] words = sentence.split(" ");
+        String paragraph = "Paranoids are not paranoid because they are paranoid but "
+                + "because they keep putting themselves deliberately into paranoid avoidable situations";
+
+        String[] words = paragraph.split("\\s+"); // Split words by whitespace
 
         MyHashTable hashTable = new MyHashTable();
 
-        // Add each word to the hash table
         for (String word : words) {
             hashTable.add(word);
         }
 
-        // Display the frequency of each word
         hashTable.displayFrequency();
     }
 }
